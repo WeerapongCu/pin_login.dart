@@ -29,7 +29,10 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
           children: [
             Text(
               "$num",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.black),
             ),
             Text(
               Nn,
@@ -48,7 +51,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
   Widget deleteButton() {
     return Container(
       width: 60,
-      height: 50,
+      height: 60,
       margin: EdgeInsets.all(8),
       child: TextButton(
         onPressed: () {
@@ -96,6 +99,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
   @override
   Widget build(BuildContext context) {
     String pinDisplay = enteredPIN.join(" ");
+    List<String> pin = ["_","_","_","_","_","_"];
     return Scaffold(
       body: Row(
         children: [
@@ -107,11 +111,20 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
                   Icon(
                     Icons.security,
                     size: 60,
-                  ),SizedBox(height: 4,),
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
                   Text("PIN LOGIN")
                 ],
               ),
-              Text(pinDisplay),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [Row(
+                    children: [Text(pin[0]),Text(pin[1]),Text(pin[2]),Text(pin[3]),Text(pin[4]),Text(pin[5])],
+                  )
+                  ],
+                ),
               Column(
                 children: [
                   Row(
