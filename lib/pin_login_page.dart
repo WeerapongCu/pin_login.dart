@@ -67,6 +67,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
         child: Icon(
           Icons.backspace,
           size: 20,
+
           color: Colors.black,
         ),
         style: TextButton.styleFrom(
