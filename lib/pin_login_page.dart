@@ -9,6 +9,7 @@ class PIN_LOGIN extends StatefulWidget {
 
 class _PIN_LOGINState extends State<PIN_LOGIN> {
   List<int> enteredPIN = [];
+  List<String> pin = ["_", "_", "_", "_", "_", "_"];
 
   Widget button_num(int num, String Nn) {
     return Container(
@@ -21,6 +22,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
           setState(() {
             if (enteredPIN.length < 6) {
               enteredPIN.add(num);
+              pin[enteredPIN.length - 1] = num.toString();
             }
           });
         },
@@ -57,6 +59,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
         onPressed: () {
           setState(() {
             if (enteredPIN.isNotEmpty) {
+              pin[enteredPIN.length - 1] = "_";
               enteredPIN.removeLast();
             }
           });
@@ -83,6 +86,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
         onPressed: () {
           setState(() {
             enteredPIN.clear();
+            pin = ["_", "_", "_", "_", "_", "_"];
           });
         },
         child: Text(
@@ -98,8 +102,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
 
   @override
   Widget build(BuildContext context) {
-    String pinDisplay = enteredPIN.join(" ");
-    List<String> pin = ["_","_","_","_","_","_"];
+    String pinDisplay = pin.join(" ");
     return Scaffold(
       body: Row(
         children: [
@@ -118,13 +121,22 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
                   Text("PIN LOGIN")
                 ],
               ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Row(
-                    children: [Text(pin[0]),Text(pin[1]),Text(pin[2]),Text(pin[3]),Text(pin[4]),Text(pin[5])],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    
+                    children: [
+                      Text(pin[0],style: TextStyle(fontSize: 20),),
+                      Text(pin[1],style: TextStyle(fontSize: 20)),
+                      Text(pin[2],style: TextStyle(fontSize: 20)),
+                      Text(pin[3],style: TextStyle(fontSize: 20)),
+                      Text(pin[4],style: TextStyle(fontSize: 20)),
+                      Text(pin[5],style: TextStyle(fontSize: 20)),
+                    ],
                   )
-                  ],
-                ),
+                ],
+              ),
               Column(
                 children: [
                   Row(
