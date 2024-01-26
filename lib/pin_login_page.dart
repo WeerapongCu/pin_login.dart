@@ -13,7 +13,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
 
   Widget button_num(int num, String Nn) {
     return Container(
-      decoration: BoxDecoration(border: Border.all()),
+      decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
       width: 60,
       height: 60,
       margin: EdgeInsets.all(8),
@@ -44,7 +44,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
         ),
         style: TextButton.styleFrom(
           shape: ContinuousRectangleBorder(),
-          foregroundColor: Colors.black,
+          foregroundColor: Colors.grey,
         ),
       ),
     );
