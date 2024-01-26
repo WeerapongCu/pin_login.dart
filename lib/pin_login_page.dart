@@ -48,7 +48,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
   Widget deleteButton() {
     return Container(
       width: 60,
-      height: 60,
+      height: 50,
       margin: EdgeInsets.all(8),
       child: TextButton(
         onPressed: () {
