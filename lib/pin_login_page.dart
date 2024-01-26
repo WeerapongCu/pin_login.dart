@@ -95,6 +95,7 @@ class _PIN_LOGINState extends State<PIN_LOGIN> {
         ),
         style: TextButton.styleFrom(
           shape: BeveledRectangleBorder(),
+          foregroundColor: Colors.black,
         ),
       ),
     );
